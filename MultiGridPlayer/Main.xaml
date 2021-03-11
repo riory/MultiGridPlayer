@@ -1,0 +1,35 @@
+﻿<Window x:Class="MultiGridPlayer.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Main" MinHeight="300" MinWidth="300"
+    Background="Black" 
+    WindowState="Maximized"
+    WindowStyle="None"
+        MouseDoubleClick="Window_MouseDoubleClick"
+        >
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Name="mnMain" Grid.ColumnSpan="2">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть несколько" Name="mnOpenMany" Click="mnOpenMany_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Выход" Name="mnExit" Click="mnExit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Сетка">
+                <MenuItem Header="3x3" Click="SetGrid_Click" Name="gr33"></MenuItem>
+                <MenuItem Header="4x3" Click="SetGrid_Click" Name="gr43"></MenuItem>
+                <MenuItem Header="4x4" Click="SetGrid_Click" Name="gr44"></MenuItem>
+                <MenuItem Header="5x4" Click="SetGrid_Click" Name="gr54"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Перейти">
+                <MenuItem Header="Начало" Name="mnGotoStart" Click="mnGotoStart_Click"></MenuItem>
+                <MenuItem Header="Середина" Name="mnGotoMiddle" Click="mnGotoMiddle_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <UniformGrid Grid.Row="1" Name="ugPlayers" Grid.ColumnSpan="2"  ></UniformGrid>
+    </Grid>
+</Window>
